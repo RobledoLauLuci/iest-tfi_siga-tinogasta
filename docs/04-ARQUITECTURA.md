@@ -1,30 +1,46 @@
-# 04 · Arquitectura: cómo se organiza el código
+# 04 · Arquitectura de SIGA
+
+## Estructura principal
 
 ```text
-siga/
-├── backend/
-│   ├── src/
-│   │   ├── config/db.js        ← única conexión a MySQL
-│   │   ├── routes/             ← rutas de la API
-│   │   ├── controllers/        ← lógica de cada ruta
-│   │   └── middleware/         ← JWT y control de roles
-│   ├── .env                    ← no se sube
-│   └── server.js
-├── frontend/
-│   ├── public/                 ← favicon e imágenes fijas
-│   └── src/
-│       ├── components/         ← TarjetaObra, TarjetaTaller, Menu
-│       ├── pages/              ← Inicio, Galeria, Talleres, Panel...
-│       └── estilos/variables.css
-├── db/esquema.sql              ← tablas
-└── docs/                       ← especificaciones .md
+siga-tinogasta/
+├── docs/                  Documentación del proyecto
+├── public/                Recursos estáticos públicos
+├── src/
+│   ├── components/        Componentes reutilizables de interfaz
+│   ├── pages/             Pantallas públicas y paneles
+│   ├── services/          Reglas de negocio y adaptadores de datos
+│   │   ├── index.js       Interfaz común de operaciones
+│   │   ├── localAdapter.js
+│   │   └── supabaseAdapter.js
+│   ├── config/            Constantes y definiciones de formularios
+│   ├── styles/            Tokens, estilos base, componentes y páginas
+│   └── __tests__/         Pruebas automatizadas
+├── supabase/
+│   └── schema.sql         Esquema SQL y configuración de datos/permisos
+├── .env.example           Ejemplo de variables (si está presente)
+├── .gitignore             Archivos excluidos de Git
+├── package.json           Scripts y dependencias
+├── vite.config.js         Configuración de Vite
+└── vercel.json            Configuración de despliegue/rutas
 ```
 
-| Parte | Función |
-|---|---|
-| `config/db.js` | Pool de conexiones MySQL |
-| `routes/` | Define los endpoints `/api/...` |
-| `middleware/` | Verifica el token y el rol |
-| `components/` | Piezas de interfaz reutilizables |
-| `pages/` | Una pantalla por archivo |
-| `db/esquema.sql` | Crea las tablas |
+## Responsabilidad de las partes
+- **`src/pages/`:** pantallas de la aplicación.
+- **`src/components/`:** elementos reutilizables, formularios, tarjetas y componentes de interfaz.
+- **`src/services/index.js`:** punto común de acceso a las operaciones de datos.
+- **`src/services/localAdapter.js`:** modo local/de demostración; sus datos no se comparten entre usuarios.
+- **`src/services/supabaseAdapter.js`:** operaciones conectadas a Supabase.
+- **`src/config/`:** constantes, roles, categorías y configuración de formularios.
+- **`src/styles/`:** tokens visuales y estilos.
+- **`supabase/schema.sql`:** definición de tablas y políticas del backend; revisar este archivo para conocer los nombres exactos.
+
+## Flujo general
+1. La persona navega por una pantalla React.
+2. La pantalla utiliza los servicios de `src/services/index.js`.
+3. La aplicación trabaja con el adaptador local o con el adaptador Supabase, según la configuración.
+4. En modo Supabase, la base de datos y sus políticas RLS deben autorizar cada operación.
+5. Vite genera los archivos de producción y Vercel los publica.
+
+## Importante
+No existe en la estructura documentada un directorio `backend/` con Express ni un esquema MySQL separado. No documentar esa arquitectura antigua como si fuera la actual.

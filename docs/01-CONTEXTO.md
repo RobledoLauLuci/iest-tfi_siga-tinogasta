@@ -1,27 +1,34 @@
-# 01 · Contexto: por qué existe SIGA
+# 01 · Contexto del proyecto SIGA
 
 ## Problema
-Laura Robledo, profesora de Artes Visuales, vende cuadros y da talleres, pero no tiene un lugar donde mostrar y gestionar todo junto. Otros artistas tampoco tienen un espacio ordenado donde publicar sus obras y talleres.
+Los artistas visuales de Tinogasta necesitan un espacio digital organizado para mostrar sus obras, difundir sus talleres y compartir actividades culturales. Cuando la información está dispersa en redes sociales o mensajes, resulta más difícil encontrar obras, conocer propuestas y contactar a sus creadores.
 
 ## Objetivo
-Una plataforma web que permita publicar obras, venderlas, inscribirse a talleres y gestionar todo desde un panel.
+Desarrollar SIGA (Sistema Integral de Gestión Artística), una plataforma web para reunir la galería de obras, los perfiles de artistas, los talleres, los eventos y los medios de consulta en un mismo lugar.
 
 ## Público
-- **Compradores:** personas que quieren comprar arte.
-- **Alumnos:** personas interesadas en talleres de arte.
-- **Artistas invitados:** quienes publican sus obras y talleres.
-- **Administradora:** Laura, que modera y gestiona.
+- **Visitantes y compradores:** exploran obras y consultan por ellas.
+- **Personas interesadas en talleres:** conocen propuestas y consultan por cupos.
+- **Artistas de Tinogasta:** presentan su perfil, obras y propuestas artísticas.
+- **Administración:** modera contenidos y gestiona la comunidad.
 
-## Productos y servicios
-| Servicio | Descripción |
-|---|---|
-| Venta de cuadros | Obras originales de Laura, precio `$ 0` como marcador |
-| Talleres de arte | Cursos con cupo e inscripción |
-| Galería de artistas | Obras y talleres de otros artistas |
-| Contacto | Consultas enviadas a la administradora |
+## Funcionalidades previstas en el producto
+- Galería de obras con información de la obra y su disponibilidad.
+- Perfiles de artistas.
+- Publicación y administración de talleres.
+- Agenda de eventos.
+- Comunidad y grupos artísticos.
+- Formulario de consultas y herramientas de moderación.
 
-## No incluye (por ahora)
-- Pago online.
-- Envíos y logística.
-- App móvil.
-- Reseñas públicas.
+## Alcance y límites actuales
+El proyecto incluye una interfaz web React + Vite y un adaptador para Supabase. El repositorio también conserva un modo local/de demostración para probar la interfaz sin un backend conectado.
+
+Según el README, no están incluidos por ahora el carrito de compras, los pagos en línea, los pedidos completos, la recuperación de contraseña y los avisos automáticos por correo. La conexión real con Supabase debe probarse de punta a punta antes de afirmar que todas las funciones están operativas en producción.
+
+## Publicación
+- Código fuente: GitHub.
+- Interfaz publicada: Vercel.
+- Datos, autenticación y almacenamiento previstos: Supabase.
+
+## Criterio de documentación
+Este documento describe el proyecto actual. Las funciones que aún no se hayan probado se identifican como pendientes y no se presentan como terminadas.

@@ -1,31 +1,42 @@
-# 08 · Tareas: en qué orden lo hacemos
+# 08 · Plan de tareas de SIGA
 
-Marcar con `[x]` al terminar, una tarea por vez.
+## Etapa 1 · Repositorio y publicación
+- [x] Crear repositorio público en GitHub.
+- [x] Subir la primera versión del código.
+- [x] Publicar la interfaz en Vercel.
+- [ ] Verificar que los cambios nuevos se desplieguen desde GitHub.
+- [ ] Confirmar que ningún archivo `.env` ni secreto esté en el repositorio.
 
-## Etapa 1 · Preparación
-- [x] Backend Node/Express con MySQL y JWT (Sprint 1)
-- [x] Login y Registro en React
-- [ ] Crear `variables.css` con la paleta
-- [ ] Agregar logo y favicon
+## Etapa 2 · Configuración de Supabase
+- [x] Preparar el adaptador de Supabase y el esquema SQL en el repositorio.
+- [ ] Verificar las variables de entorno de producción en Vercel.
+- [ ] Ejecutar pruebas reales de registro e inicio de sesión.
+- [ ] Confirmar las políticas RLS con usuarios de distintos roles.
+- [ ] Confirmar que los datos creados por una cuenta se vean desde otra cuenta autorizada.
+- [ ] Verificar carga y lectura de imágenes en Storage.
 
-## Etapa 2 · Base de datos
-- [ ] Crear `db/esquema.sql` con las 10 tablas
-- [ ] Cargar categorías de ejemplo
+## Etapa 3 · Funcionalidades principales
+- [ ] Probar galería, filtros y detalle de obra en producción.
+- [ ] Probar publicación, edición, stock y estados de obras.
+- [ ] Probar creación y administración de talleres.
+- [ ] Probar eventos, comunidad y grupos.
+- [ ] Probar consultas y moderación.
+- [ ] Confirmar el comportamiento del panel administrativo.
 
-## Etapa 3 · Galería
-- [ ] Componente `TarjetaObra`
-- [ ] Página de galería con filtro
-- [ ] Detalle de obra
+## Etapa 4 · Calidad
+- [ ] Ejecutar `npm test` y registrar el resultado.
+- [ ] Ejecutar `npm run build` y registrar el resultado.
+- [ ] Revisar diseño a 360 px y en escritorio.
+- [ ] Revisar textos alternativos, contraste y navegación por teclado.
+- [ ] Medir Lighthouse y guardar resultados reales.
+- [ ] Revisar errores de consola y de red.
 
-## Etapa 4 · Artistas y talleres
-- [ ] Publicar y editar obras
-- [ ] Listar talleres e inscribirse
+## Etapa 5 · Entrega TFI
+- [ ] Completar la documentación SDD solicitada por la cátedra.
+- [ ] Registrar las herramientas de IA y las intervenciones realizadas.
+- [ ] Integrar las piezas multimedia requeridas y verificar que estén accesibles.
+- [ ] Grabar el video de demostración.
+- [ ] Preparar el informe y los enlaces públicos.
+- [ ] Diferenciar en la defensa las funciones terminadas de las pendientes.
 
-## Etapa 5 · Pedidos y contacto
-- [ ] Pedido de obra
-- [ ] Formulario de contacto
-
-## Etapa 6 · Calidad y publicación
-- [ ] Panel de administración y reportes
-- [ ] Revisar SEO y accesibilidad
-- [ ] Publicar en Vercel y Render
+**Nota:** las casillas representan el estado documental conocido al actualizar este archivo. Marcar una tarea como terminada solo después de comprobarla.
