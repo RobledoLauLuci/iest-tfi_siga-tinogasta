@@ -32,12 +32,12 @@ export default function Contact() {
               </ul>
             ) : (
               <p className="muted">
-                Los datos de contacto institucional se configuran con las variables <code>VITE_CONTACT_*</code> (ver README).
-                Mientras tanto, el formulario es el medio de contacto.
+                ¿Querés comunicarte con SIGA? Por el momento, podés enviarnos tu consulta, sugerencia o propuesta a través
+                del formulario de contacto. Nos comunicaremos con vos a la brevedad.
               </p>
             )}
             <p className="muted" style={{ fontSize: '0.88rem' }}>
-              Tinogasta, Catamarca, Argentina. Nunca publicamos datos privados de las personas registradas.
+              Ubicación: Tinogasta, Catamarca, Argentina.
             </p>
           </aside>
         </div>
